@@ -229,7 +229,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                 {
                                     if passedParameter.lowercaseString.hasPrefix("daddr=")
                                     {
-                                        var destinationString = dropCharactersFromStartOfString(passedParameter, characterAmount: 12)
+                                        var destinationString = dropCharactersFromStartOfString(passedParameter, characterAmount: 5)
                                         
                                         if destinationString == "nil"
                                         {
@@ -252,7 +252,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                     
                                     if passedParameter.lowercaseString.hasPrefix("saddr=")
                                     {
-                                        var startingPointString = dropCharactersFromStartOfString(passedParameter, characterAmount: 14)
+                                        //comdefaults://navigate?daddr=5%20Callison%20Lane%20Voorhees%20NJ%2008043&saddr=nil
+                                        
+                                        var startingPointString = dropCharactersFromStartOfString(passedParameter, characterAmount: 6)
                                         
                                         if startingPointString == "nil"
                                         {

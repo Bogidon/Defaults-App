@@ -133,7 +133,14 @@ class ViewController: UIViewController
                                             
                                             if typeIdOfDeeperSpecificKey == equivalentTypeId
                                             {
-                                                reconstructedLink = "\(equivalentUrlScheme)\(specificKey as! NSString)?\(equivalentTypeId)=\(variablePassedIntoURLScheme)"
+                                                if retrievedDictionary.valueForKey("Uses Initial Parameters") as! Bool == true
+                                                {
+                                                    reconstructedLink = "\(equivalentUrlScheme)\(specificKey as! NSString)?\(equivalentTypeId)=\(variablePassedIntoURLScheme)"
+                                                }
+                                                else
+                                                {
+                                                    reconstructedLink = "\(equivalentUrlScheme)\(equivalentTypeId)=\(variablePassedIntoURLScheme)"
+                                                }
                                             }
                                         }
                                     }
