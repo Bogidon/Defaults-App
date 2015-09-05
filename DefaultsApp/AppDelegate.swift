@@ -54,245 +54,250 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if url.scheme!.lowercaseString == "comdefaults"
         {
-            var testString = "hello"
-            testString = dropCharactersFromStartOfString(testString, characterAmount: 2)
-            
-            if url.host!.lowercaseString == "mail"
+            if url.host != nil
             {
-                var seperatedArray: [String] = url.relativeString!.lowercaseString.componentsSeparatedByString("comdefaults://mail")
-                
-                if seperatedArray.count > 1
+                if url.host!.lowercaseString == "mail"
                 {
-                    var seperatedString = seperatedArray[1] as String
+                    var seperatedArray: [String] = url.relativeString!.lowercaseString.componentsSeparatedByString("comdefaults://mail")
                     
-                    if seperatedString != ""
+                    if seperatedArray.count > 1
                     {
-                        seperatedString = dropFirst(seperatedString)
+                        var seperatedString = seperatedArray[1] as String
                         
-                        var seperatedByAndArray: [String] = seperatedString.componentsSeparatedByString("&")
-                        
-                        if seperatedByAndArray.count > 0
+                        if seperatedString != ""
                         {
-                            for passedParameter in seperatedByAndArray
+                            seperatedString = dropFirst(seperatedString)
+                            
+                            var seperatedByAndArray: [String] = seperatedString.componentsSeparatedByString("&")
+                            
+                            if seperatedByAndArray.count > 0
                             {
-                                if passedParameter.lowercaseString.hasPrefix("to=")
+                                for passedParameter in seperatedByAndArray
                                 {
-                                    var toString = dropFirstThreeCharactersOfString(passedParameter)
-                                    
-                                    if toString == "nil"
+                                    if passedParameter.lowercaseString.hasPrefix("to=")
                                     {
-                                        toIsNil = true
-                                        println("To field was left empty.")
+                                        var toString = dropCharactersFromStartOfString(passedParameter, characterAmount: 3)
+                                        
+                                        if toString == "nil"
+                                        {
+                                            toIsNil = true
+                                            println("To field was left empty.")
+                                        }
+                                        else
+                                        {
+                                            toIsNil = false
+                                            println("Message is To: '\(toString)'.")
+                                        }
                                     }
                                     else
                                     {
-                                        toIsNil = false
-                                        println("Message is To: '\(toString)'.")
+                                        if toIsNil != false
+                                        {
+                                            toIsNil = true
+                                        }
                                     }
-                                }
-                                else
-                                {
-                                    if toIsNil != false
+                                    
+                                    if passedParameter.lowercaseString.hasPrefix("cc=")
                                     {
-                                        toIsNil = true
+                                        var ccString = dropCharactersFromStartOfString(passedParameter, characterAmount: 3)
+                                        
+                                        if ccString == "nil"
+                                        {
+                                            ccIsNil = true
+                                            println("CC field was left empty.")
+                                        }
+                                        else
+                                        {
+                                            ccIsNil = false
+                                            println("Message is CC'd To: '\(ccString)'.")
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if ccIsNil != false
+                                        {
+                                            ccIsNil = true
+                                        }
+                                    }
+                                    
+                                    if passedParameter.lowercaseString.hasPrefix("bcc=")
+                                    {
+                                        var bccString = dropCharactersFromStartOfString(passedParameter, characterAmount: 4)
+                                        
+                                        if bccString == "nil"
+                                        {
+                                            bccIsNil = true
+                                            println("BCC field was left empty.")
+                                        }
+                                        else
+                                        {
+                                            bccIsNil = false
+                                            println("Message is BCC'd To: '\(bccString)'.")
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if bccIsNil != false
+                                        {
+                                            bccIsNil = true
+                                        }
+                                    }
+                                    
+                                    if passedParameter.lowercaseString.hasPrefix("subject=")
+                                    {
+                                        var subjectString = dropCharactersFromStartOfString(passedParameter, characterAmount: 8)
+                                        
+                                        if subjectString == "nil"
+                                        {
+                                            subjectIsNil = true
+                                            println("Subject field was left empty.")
+                                        }
+                                        else
+                                        {
+                                            subjectIsNil = false
+                                            println("Message's Subject is: '\(subjectString)'.")
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if subjectIsNil != false
+                                        {
+                                            subjectIsNil = true
+                                        }
+                                    }
+                                    
+                                    if passedParameter.lowercaseString.hasPrefix("body=")
+                                    {
+                                        var messageString = dropCharactersFromStartOfString(passedParameter, characterAmount: 5)
+                                        
+                                        if messageString == "nil"
+                                        {
+                                            messageIsNil = true
+                                            println("Message field was left empty.")
+                                        }
+                                        else
+                                        {
+                                            messageIsNil = false
+                                            println("Message's Message is: '\(messageString)'.")
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if messageIsNil != false
+                                        {
+                                            messageIsNil = true
+                                        }
                                     }
                                 }
                                 
-                                if passedParameter.lowercaseString.hasPrefix("cc=")
+                                if toIsNil == true && ccIsNil == true && bccIsNil == true && subjectIsNil == true && messageIsNil == true
                                 {
-                                    var ccString = dropFirstThreeCharactersOfString(passedParameter)
-                                    
-                                    if ccString == "nil"
-                                    {
-                                        ccIsNil = true
-                                        println("CC field was left empty.")
-                                    }
-                                    else
-                                    {
-                                        ccIsNil = false
-                                        println("Message is CC'd To: '\(ccString)'.")
-                                    }
-                                }
-                                else
-                                {
-                                    if ccIsNil != false
-                                    {
-                                        ccIsNil = true
-                                    }
-                                }
-                                
-                                if passedParameter.lowercaseString.hasPrefix("bcc=")
-                                {
-                                    var bccString = dropFirstFourCharactersOfString(passedParameter)
-                                    
-                                    if bccString == "nil"
-                                    {
-                                        bccIsNil = true
-                                        println("BCC field was left empty.")
-                                    }
-                                    else
-                                    {
-                                        bccIsNil = false
-                                        println("Message is BCC'd To: '\(bccString)'.")
-                                    }
-                                }
-                                else
-                                {
-                                    if bccIsNil != false
-                                    {
-                                        bccIsNil = true
-                                    }
-                                }
-                                
-                                if passedParameter.lowercaseString.hasPrefix("subject=")
-                                {
-                                    var subjectString = dropFirstEightCharactersOfString(passedParameter)
-                                    
-                                    if subjectString == "nil"
-                                    {
-                                        subjectIsNil = true
-                                        println("Subject field was left empty.")
-                                    }
-                                    else
-                                    {
-                                        subjectIsNil = false
-                                        println("Message's Subject is: '\(subjectString)'.")
-                                    }
-                                }
-                                else
-                                {
-                                    if subjectIsNil != false
-                                    {
-                                        subjectIsNil = true
-                                    }
-                                }
-                                
-                                if passedParameter.lowercaseString.hasPrefix("body=")
-                                {
-                                    var messageString = dropFirstFiveCharactersOfString(passedParameter)
-                                    
-                                    if messageString == "nil"
-                                    {
-                                        messageIsNil = true
-                                        println("Message field was left empty.")
-                                    }
-                                    else
-                                    {
-                                        messageIsNil = false
-                                        println("Message's Message is: '\(messageString)'.")
-                                    }
-                                }
-                                else
-                                {
-                                    if messageIsNil != false
-                                    {
-                                        messageIsNil = true
-                                    }
+                                    throwTypeError()
                                 }
                             }
-                            
-                            if toIsNil == true && ccIsNil == true && bccIsNil == true && subjectIsNil == true && messageIsNil == true
+                            else
                             {
                                 throwTypeError()
                             }
                         }
                         else
                         {
-                            throwTypeError()
+                            println("This guy just wants to open Mail.")
                         }
                     }
-                    else
-                    {
-                        println("This guy just wants to open Mail.")
-                    }
-                }
-                
-                //mail?to=%@,cc=%@,bcc=%@,subject=%@body=%@
-                //comdefaults://mail?to=grantgoodman@optonline.net&cc=john@example.com&bcc=goodmang@live.northshoreschools.org&subject=Hello!&body=How%20are%20you?
-                
-                //comdefaults://navigate?daddr=%f,%f&saddr=%f,%f
-            }
-            else if url.host!.lowercaseString == "navigate"
-            {
-                var seperatedArray: [String] = url.relativeString!.lowercaseString.componentsSeparatedByString("comdefaults://navigate")
-                
-                if seperatedArray.count > 1
-                {
-                    var seperatedString = seperatedArray[1] as String
                     
-                    if seperatedString != ""
+                    //mail?to=%@,cc=%@,bcc=%@,subject=%@body=%@
+                    //comdefaults://mail?to=grantgoodman@optonline.net&cc=john@example.com&bcc=goodmang@live.northshoreschools.org&subject=Hello!&body=How%20are%20you?
+                    
+                    //comdefaults://navigate?daddr=%f,%f&saddr=%f,%f
+                }
+                else if url.host!.lowercaseString == "navigate"
+                {
+                    var seperatedArray: [String] = url.relativeString!.lowercaseString.componentsSeparatedByString("comdefaults://navigate")
+                    
+                    if seperatedArray.count > 1
                     {
-                        seperatedString = dropFirst(seperatedString)
+                        var seperatedString = seperatedArray[1] as String
                         
-                        var seperatedByAndArray: [String] = seperatedString.componentsSeparatedByString("&")
-                        
-                        if seperatedByAndArray.count > 0
+                        if seperatedString != ""
                         {
-                            for passedParameter in seperatedByAndArray
+                            seperatedString = dropFirst(seperatedString)
+                            
+                            var seperatedByAndArray: [String] = seperatedString.componentsSeparatedByString("&")
+                            
+                            if seperatedByAndArray.count > 0
                             {
-                                if passedParameter.lowercaseString.hasPrefix("destination=")
+                                for passedParameter in seperatedByAndArray
                                 {
-                                    var destinationString = dropFirstTwelveCharactersOfString(passedParameter)
-                                    
-                                    if destinationString == "nil"
+                                    if passedParameter.lowercaseString.hasPrefix("destination=")
                                     {
-                                        destinationIsNil = true
-                                        println("Destination field was left empty.")
+                                        var destinationString = dropCharactersFromStartOfString(passedParameter, characterAmount: 12)
+                                        
+                                        if destinationString == "nil"
+                                        {
+                                            destinationIsNil = true
+                                            println("Destination field was left empty.")
+                                        }
+                                        else
+                                        {
+                                            destinationIsNil = false
+                                            println("Destination is: '\(destinationString)'.")
+                                        }
                                     }
                                     else
                                     {
-                                        destinationIsNil = false
-                                        println("Destination is: '\(destinationString)'.")
+                                        if destinationIsNil != false
+                                        {
+                                            destinationIsNil = true
+                                        }
                                     }
-                                }
-                                else
-                                {
-                                    if destinationIsNil != false
-                                    {
-                                        destinationIsNil = true
-                                    }
-                                }
-                                
-                                if passedParameter.lowercaseString.hasPrefix("startingpoint=")
-                                {
-                                    var startingPointString = dropFirstFourteenCharactersOfString(passedParameter)
                                     
-                                    if startingPointString == "nil"
+                                    if passedParameter.lowercaseString.hasPrefix("startingpoint=")
                                     {
-                                        startingPointIsNil = true
-                                        println("Starting point field was left empty.")
+                                        var startingPointString = dropCharactersFromStartOfString(passedParameter, characterAmount: 14)
+                                        
+                                        if startingPointString == "nil"
+                                        {
+                                            startingPointIsNil = true
+                                            println("Starting point field was left empty.")
+                                        }
+                                        else
+                                        {
+                                            startingPointIsNil = false
+                                            println("Starting point is: '\(startingPointString)'.")
+                                        }
                                     }
                                     else
                                     {
-                                        startingPointIsNil = false
-                                        println("Starting point is: '\(startingPointString)'.")
-                                    }
-                                }
-                                else
-                                {
-                                    if startingPointIsNil != false
-                                    {
-                                        startingPointIsNil = true
+                                        if startingPointIsNil != false
+                                        {
+                                            startingPointIsNil = true
+                                        }
                                     }
                                 }
                             }
+                            
+                            if destinationIsNil == true && startingPointIsNil == true
+                            {
+                                throwTypeError()
+                            }
                         }
-                        
-                        if destinationIsNil == true && startingPointIsNil == true
+                        else
                         {
-                            throwTypeError()
+                            println("This guy just wants to open Maps.")
                         }
                     }
-                    else
-                    {
-                        println("This guy just wants to open Maps.")
-                    }
+                    
+                }
+                else
+                {
+                    println("The URL host wasn't recognized.")
                 }
                 
             }
             else
             {
-                println("The URL host wasn't recognized.")
+                println("No URL host was passed.")
             }
         }
         else
@@ -303,106 +308,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return false
     }
     
-    func dropFirstThreeCharactersOfString(dropString: String) -> String
-    {
-        var newDropString = dropFirst(dropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        
-        return newDropString
-    }
-    
-    func dropFirstFourCharactersOfString(dropString: String) -> String
-    {
-        var newDropString = dropFirst(dropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        
-        return newDropString
-    }
-    
-    func dropFirstFiveCharactersOfString(dropString: String) -> String
-    {
-        var newDropString = dropFirst(dropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        
-        return newDropString
-    }
-    
-    func dropFirstSixCharactersOfString(dropString: String) -> String
-    {
-        var newDropString = dropFirst(dropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        
-        return newDropString
-    }
-    
-    func dropFirstEightCharactersOfString(dropString: String) -> String
-    {
-        var newDropString = dropFirst(dropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        
-        return newDropString
-    }
-    
-    func dropFirstTwelveCharactersOfString(dropString: String) -> String
-    {
-        var newDropString = dropFirst(dropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        
-        return newDropString
-    }
-    
-    func dropFirstFourteenCharactersOfString(dropString: String) -> String
-    {
-        var newDropString = dropFirst(dropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        newDropString = dropFirst(newDropString)
-        
-        return newDropString
-    }
-    
     func dropCharactersFromStartOfString(dropString: String, characterAmount: Int) -> String
     {
         var mutableCharacterAmount = characterAmount
         var mutableDropString = dropString
         
-        for (mutableCharacterAmount = 0; mutableCharacterAmount > 0; mutableCharacterAmount--)
+        for (mutableCharacterAmount = characterAmount; mutableCharacterAmount > 0; mutableCharacterAmount--)
         {
             mutableDropString = dropFirst(mutableDropString)
         }
