@@ -26,6 +26,8 @@ class ViewController: UIViewController
     var applicationName: String! = ""
     var alternativeApplicationName: String! = ""
     
+    var reconstructedLink: String! = ""
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -36,7 +38,7 @@ class ViewController: UIViewController
         
         var passedURLSchemeHeader = seperatedArray[0] + "://"
         
-        alternativeApplicationName = "Tweetbot"
+        alternativeApplicationName = "GenericTwitter"
         
         ///
         
@@ -131,9 +133,7 @@ class ViewController: UIViewController
                                             
                                             if typeIdOfDeeperSpecificKey == equivalentTypeId
                                             {
-                                                println("Original Link: '\(passedUrlScheme)'.")
-                                                
-                                                println("Reconstructed Link: '\(equivalentUrlScheme)\(specificKey as! NSString)?\(equivalentTypeId)=\(variablePassedIntoURLScheme)'.")
+                                                reconstructedLink = "\(equivalentUrlScheme)\(specificKey as! NSString)?\(equivalentTypeId)=\(variablePassedIntoURLScheme)"
                                             }
                                         }
                                     }
@@ -144,6 +144,9 @@ class ViewController: UIViewController
                 }
             }
         }
+        
+        println("Original Link: '\(passedUrlScheme)'.")
+        println("Reconstructed Link: '\(reconstructedLink)'.")
     }
 
     override func didReceiveMemoryWarning()

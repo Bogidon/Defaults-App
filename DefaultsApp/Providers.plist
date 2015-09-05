@@ -7,7 +7,6 @@
 		<key>Twitter</key>
 		<array>
 			<string>usernameType</string>
-			<string>userType</string>
 			<string>identifierType</string>
 			<string>unknownType</string>
 			<string>messageType</string>
@@ -99,41 +98,6 @@
 		</dict>
 		<dict>
 			<key>Name</key>
-			<string>Tweetbot</string>
-			<key>Category</key>
-			<string>Twitter</string>
-			<key>URL Scheme</key>
-			<string>tweetbot://</string>
-			<key>Parameters</key>
-			<dict>
-				<key>user</key>
-				<array>
-					<dict>
-						<key>typeId</key>
-						<string>user_name</string>
-						<key>parameterType</key>
-						<string>usernameType</string>
-					</dict>
-					<dict>
-						<key>typeId</key>
-						<string>identifier</string>
-						<key>parameterType</key>
-						<string>identifierType</string>
-					</dict>
-				</array>
-				<key>status</key>
-				<array>
-					<dict>
-						<key>typeId</key>
-						<string>id</string>
-						<key>parameterType</key>
-						<string>identifierType</string>
-					</dict>
-				</array>
-			</dict>
-		</dict>
-		<dict>
-			<key>Name</key>
 			<string>GenericTwitter</string>
 			<key>Category</key>
 			<string>Twitter</string>
@@ -152,6 +116,15 @@
 					<dict>
 						<key>typeId</key>
 						<string>identity</string>
+						<key>parameterType</key>
+						<string>identifierType</string>
+					</dict>
+				</array>
+				<key>status</key>
+				<array>
+					<dict>
+						<key>typeId</key>
+						<string>id</string>
 						<key>parameterType</key>
 						<string>identifierType</string>
 					</dict>
