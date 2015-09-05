@@ -52,6 +52,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var destinationIsNil: Bool?
         var startingPointIsNil: Bool?
         
+        var urlIsNil: Bool?
+        
         if url.scheme!.lowercaseString == "comdefaults"
         {
             if url.host != nil
@@ -195,10 +197,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                     throwTypeError()
                                 }
                             }
-                            else
-                            {
-                                throwTypeError()
-                            }
                         }
                         else
                         {
@@ -287,7 +285,56 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             println("This guy just wants to open Maps.")
                         }
                     }
+                }
+                else if url.host!.lowercaseString == "openurl"
+                {
+                    var seperatedArray: [String] = url.relativeString!.lowercaseString.componentsSeparatedByString("comdefaults://openurl")
                     
+                    if seperatedArray.count > 1
+                    {
+                        var seperatedString = seperatedArray[1] as String
+                        
+                        if seperatedString != ""
+                        {
+                            seperatedString = dropFirst(seperatedString)
+                            
+                            var seperatedByAndArray: [String] = seperatedString.componentsSeparatedByString("&")
+                            
+                            if seperatedByAndArray.count > 0
+                            {
+                                for passedParameter in seperatedByAndArray
+                                {
+                                    if passedParameter.lowercaseString.hasPrefix("url=")
+                                    {
+                                        var urlString = dropCharactersFromStartOfString(passedParameter, characterAmount: 4)
+                                        
+                                        if urlString == "nil"
+                                        {
+                                            urlIsNil = true
+                                            throwTypeError()
+                                        }
+                                        else
+                                        {
+                                            urlIsNil = false
+                                            println("URL to Open is: '\(urlString)'.")
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if urlIsNil != false
+                                        {
+                                            urlIsNil = true
+                                            throwTypeError()
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            println("This guy just wants to open Safari.")
+                        }
+                    }
                 }
                 else
                 {
