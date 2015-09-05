@@ -227,7 +227,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             {
                                 for passedParameter in seperatedByAndArray
                                 {
-                                    if passedParameter.lowercaseString.hasPrefix("destination=")
+                                    if passedParameter.lowercaseString.hasPrefix("daddr=")
                                     {
                                         var destinationString = dropCharactersFromStartOfString(passedParameter, characterAmount: 12)
                                         
@@ -250,7 +250,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                         }
                                     }
                                     
-                                    if passedParameter.lowercaseString.hasPrefix("startingpoint=")
+                                    if passedParameter.lowercaseString.hasPrefix("saddr=")
                                     {
                                         var startingPointString = dropCharactersFromStartOfString(passedParameter, characterAmount: 14)
                                         
