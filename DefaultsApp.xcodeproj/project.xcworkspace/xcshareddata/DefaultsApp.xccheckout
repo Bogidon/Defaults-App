@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9F40D4E7-6C85-4CCE-9B1D-6BC1F073053C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DefaultsApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>74E5CA3006625C7BA0A6EE517D265E2463B90A34</key>
+		<string>https://github.com/grantbrooksgoodman/DefaultsApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DefaultsApp.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>74E5CA3006625C7BA0A6EE517D265E2463B90A34</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/grantbrooksgoodman/DefaultsApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>74E5CA3006625C7BA0A6EE517D265E2463B90A34</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>74E5CA3006625C7BA0A6EE517D265E2463B90A34</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Defaults-App</string>
+		</dict>
+	</array>
+</dict>
+</plist>
