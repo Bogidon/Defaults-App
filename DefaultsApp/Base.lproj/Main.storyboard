@@ -6,10 +6,10 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="DefaultsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="MainController" customModule="DefaultsApp" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -18,8 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="1300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wave" translatesAutoresizingMaskIntoConstraints="NO" id="j2X-Ky-yqd">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="1300"/>
+                                <animations/>
+                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nbT-DY-rhA">
-                                <rect key="frame" x="0.0" y="20" width="600" height="1280"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="1300"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0A-1z-zhH" userLabel="Calendar">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
@@ -46,8 +50,8 @@
                                                     </mask>
                                                 </variation>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunrise Calendar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgS-71-Fnt">
-                                                <rect key="frame" x="91" y="230" width="118" height="19"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple Calendar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgS-71-Fnt">
+                                                <rect key="frame" x="97.5" y="230" width="106.5" height="19"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -55,7 +59,7 @@
                                             </label>
                                         </subviews>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.0" green="0.75294117647058822" blue="0.89411764705882346" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.75294117647058822" blue="0.89411764705882346" alpha="0.50415558510638303" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="centerY" secondItem="225-6O-MP0" secondAttribute="centerY" id="BT1-9e-4Xg"/>
                                             <constraint firstItem="225-6O-MP0" firstAttribute="height" secondItem="B0A-1z-zhH" secondAttribute="height" multiplier="0.4" id="GWf-GL-1VM"/>
@@ -87,8 +91,8 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google Maps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oh0-qm-mgz">
-                                                <rect key="frame" x="104" y="230" width="93" height="19"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple Maps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oh0-qm-mgz">
+                                                <rect key="frame" x="109" y="230" width="82.5" height="19"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -112,7 +116,7 @@
                                             </imageView>
                                         </subviews>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.79607843137254897" green="0.43529411764705883" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.79607843137254897" green="0.43529411764705883" blue="0.84313725490196079" alpha="0.50446032801418439" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" secondItem="BP9-9t-QFl" secondAttribute="height" multiplier="2.5" id="3VZ-A1-n5H"/>
                                             <constraint firstAttribute="width" secondItem="dka-dY-t51" secondAttribute="height" multiplier="1:1" id="6Bg-ev-PRs"/>
@@ -136,8 +140,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WOt-B0-43m" userLabel="Mail">
                                         <rect key="frame" x="0.0" y="300" width="300" height="300"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Outlook" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWj-4C-KvN">
-                                                <rect key="frame" x="123" y="230" width="54" height="19"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple Mail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWj-4C-KvN">
+                                                <rect key="frame" x="114" y="230" width="72" height="19"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -159,7 +163,7 @@
                                             </label>
                                         </subviews>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.3529411764705882" green="0.85098039215686272" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.3529411764705882" green="0.85098039215686272" blue="0.66666666666666663" alpha="0.52886746453900713" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="caj-Po-oGn" firstAttribute="height" secondItem="WOt-B0-43m" secondAttribute="height" multiplier="0.4" id="7Bx-m6-vt4"/>
                                             <constraint firstItem="CWj-4C-KvN" firstAttribute="top" secondItem="caj-Po-oGn" secondAttribute="bottom" constant="20" id="8lv-jK-jRT"/>
@@ -192,14 +196,14 @@
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="9aD-tX-erZ"/>
                                                         <exclude reference="1kk-Yn-ad4"/>
+                                                        <exclude reference="9aD-tX-erZ"/>
                                                         <exclude reference="Uwh-Fy-5N6"/>
                                                     </mask>
                                                 </variation>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dolphin Browser" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZP-Ho-yL0">
-                                                <rect key="frame" x="93" y="230" width="114" height="19"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Safari" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZP-Ho-yL0">
+                                                <rect key="frame" x="130" y="230" width="39" height="19"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -214,7 +218,7 @@
                                             </label>
                                         </subviews>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.90196078431372551" green="0.33725490196078434" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.90196078431372551" green="0.33725490196078434" blue="0.47843137254901957" alpha="0.54305186170212771" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="dnI-iY-SDT" firstAttribute="width" secondItem="dnI-iY-SDT" secondAttribute="height" multiplier="65:54" id="1ga-PK-vZl"/>
                                             <constraint firstAttribute="centerX" secondItem="dnI-iY-SDT" secondAttribute="centerX" id="3gG-TP-36l"/>
@@ -263,7 +267,7 @@
                                             </label>
                                         </subviews>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.73725490196078436" green="0.46274509803921571" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.73725490196078436" green="0.46274509803921571" blue="0.97254901960784312" alpha="0.5" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="centerY" secondItem="SyG-AI-d5W" secondAttribute="centerY" id="12h-NK-lLc"/>
                                             <constraint firstItem="SyG-AI-d5W" firstAttribute="top" secondItem="XSb-SH-MAw" secondAttribute="bottom" constant="20" id="98n-X6-uiB"/>
@@ -309,7 +313,7 @@
                                             </imageView>
                                         </subviews>
                                         <animations/>
-                                        <color key="backgroundColor" red="1" green="0.58039215686274503" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="1" green="0.58039215686274503" blue="0.37254901960784315" alpha="0.31507646276595747" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="centerY" secondItem="xw0-R7-c17" secondAttribute="centerY" constant="0.25" id="2KG-QX-j6o"/>
                                             <constraint firstAttribute="centerX" secondItem="xw0-R7-c17" secondAttribute="centerX" id="62i-nm-zfG"/>
@@ -353,7 +357,7 @@
                                             </label>
                                         </subviews>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.91764705882352937" green="0.75686274509803919" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.91764705882352937" green="0.75686274509803919" blue="0.30196078431372547" alpha="0.46963652482269502" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="centerY" secondItem="P9H-be-Q19" secondAttribute="centerY" id="5He-T1-nSq"/>
                                             <constraint firstItem="P9H-be-Q19" firstAttribute="width" relation="lessThanOrEqual" secondItem="vhV-Tm-NEn" secondAttribute="width" multiplier="0.4" id="Ae2-oD-sx0"/>
@@ -368,8 +372,8 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="ET7-Py-b2E"/>
                                                 <exclude reference="CUl-Cq-unA"/>
+                                                <exclude reference="ET7-Py-b2E"/>
                                                 <exclude reference="Ae2-oD-sx0"/>
                                             </mask>
                                         </variation>
@@ -378,14 +382,14 @@
                                         <rect key="frame" x="300" y="900" width="300" height="300"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RkR-hS-ZNw">
-                                                <rect key="frame" x="112.5" y="47" width="75" height="23"/>
+                                                <rect key="frame" x="112" y="47" width="75" height="23"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yahoo Weather" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XR6-Zl-DgZ">
-                                                <rect key="frame" x="97.5" y="230" width="105" height="19"/>
+                                                <rect key="frame" x="97" y="230" width="105" height="19"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -400,7 +404,7 @@
                                             </imageView>
                                         </subviews>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.96078431372549022" green="0.49411764705882355" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.96078431372549022" green="0.49411764705882355" blue="0.91764705882352937" alpha="0.52382535460992907" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="1vL-BE-xy5" secondAttribute="height" multiplier="1:1" id="0JX-tm-OC7"/>
                                             <constraint firstAttribute="centerX" secondItem="HZU-Of-6oI" secondAttribute="centerX" id="4Ff-GI-Zsy"/>
@@ -414,8 +418,8 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="oJh-La-gtI"/>
                                                 <exclude reference="0JX-tm-OC7"/>
+                                                <exclude reference="oJh-La-gtI"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -511,9 +515,13 @@
                         <constraints>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="nbT-DY-rhA" secondAttribute="bottom" id="7bC-jW-Tgr"/>
                             <constraint firstAttribute="trailing" secondItem="nbT-DY-rhA" secondAttribute="trailing" id="BOH-th-IOS"/>
+                            <constraint firstAttribute="trailing" secondItem="j2X-Ky-yqd" secondAttribute="trailing" id="DWo-je-d9f"/>
+                            <constraint firstItem="j2X-Ky-yqd" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="OcI-5p-v2E"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="j2X-Ky-yqd" secondAttribute="bottom" id="TET-eQ-e6f"/>
                             <constraint firstItem="nbT-DY-rhA" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Vc0-z2-prK"/>
                             <constraint firstItem="nbT-DY-rhA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="XX3-tV-NS5"/>
                             <constraint firstItem="Sv4-9F-gTZ" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" multiplier="0.5" id="YhJ-4e-RUE"/>
+                            <constraint firstItem="j2X-Ky-yqd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="sTf-Jf-Uqa"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -521,12 +529,23 @@
                             </mask>
                         </variation>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="1300"/>
+                    <connections>
+                        <outlet property="Browser" destination="GU4-D2-3DF" id="91x-BL-hYa"/>
+                        <outlet property="BrowserLabel" destination="jZP-Ho-yL0" id="eFP-DU-1Nz"/>
+                        <outlet property="Calendar" destination="B0A-1z-zhH" id="FNP-e2-gXi"/>
+                        <outlet property="CalendarLabel" destination="hgS-71-Fnt" id="I3Z-hr-rCz"/>
+                        <outlet property="Mail" destination="WOt-B0-43m" id="pfl-Zq-nTh"/>
+                        <outlet property="MailLabel" destination="CWj-4C-KvN" id="R65-Rs-M6B"/>
+                        <outlet property="Navigation" destination="dka-dY-t51" id="6Al-yB-wkG"/>
+                        <outlet property="NavigationLabel" destination="oh0-qm-mgz" id="IAT-SQ-2zi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="475" y="356"/>
+            <point key="canvasLocation" x="461" y="356"/>
         </scene>
     </scenes>
     <resources>
@@ -537,6 +556,7 @@
         <image name="Navigation" width="130" height="130"/>
         <image name="Pdf" width="49" height="65"/>
         <image name="Photos" width="130" height="130"/>
+        <image name="Wave" width="3533" height="1987"/>
         <image name="Weather" width="130" height="130"/>
     </resources>
 </document>

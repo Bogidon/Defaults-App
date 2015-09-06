@@ -9,8 +9,23 @@
 import UIKit
 import PureLayout
 
-class ViewController: UIViewController
+class MainController: UIViewController, UIGestureRecognizerDelegate
 {
+    
+    @IBOutlet weak var Calendar: UIView!
+    @IBOutlet weak var Navigation: UIView!
+    @IBOutlet weak var Mail: UIView!
+    @IBOutlet weak var Browser: UIView!
+    @IBOutlet weak var CalendarLabel: UILabel!
+    @IBOutlet weak var MailLabel: UILabel!
+    @IBOutlet weak var BrowserLabel: UILabel!
+    @IBOutlet weak var NavigationLabel: UILabel!
+    
+    static var calendarHost = "applecalendar"
+    static var navigationHost = "applemaps"
+    static var mailHost = "applemail"
+    static var browserHost = "safari"
+    
     var defaultTypesDictionary: NSDictionary?
     var providerItemsArray = [NSDictionary]?()
     var currentApplicationDictionary: NSDictionary!
@@ -36,20 +51,22 @@ class ViewController: UIViewController
     {
         super.viewDidLoad()
         
-//        let grid : DFGrid = DFGrid()
-//        grid.setTranslatesAutoresizingMaskIntoConstraints(false)
-//        view.addSubview(grid)
-//        grid.autoPinEdgesToSuperviewMargins()
-//        grid.backgroundColor = UIColor.blueColor()
-//        
-//        var views : [UIView] = []
-//        for i in 1...10 {
-//            var view = UIView()
-//            view.backgroundColor = UIColor.redColor()
-//            views.append(view)
-//        }
-//        
-//        grid.configure(views)
+        // Gesture recognizers
+        let tap = UITapGestureRecognizer(target: self, action: Selector("navigate"))
+        tap.delegate = self
+        Navigation.addGestureRecognizer(tap)
+        
+        let tap1 = UITapGestureRecognizer(target: self, action: Selector("mail"))
+        tap1.delegate = self
+        Mail.addGestureRecognizer(tap1)
+        
+        let tap2 = UITapGestureRecognizer(target: self, action: Selector("browser"))
+        tap2.delegate = self
+        Browser.addGestureRecognizer(tap2)
+        
+        let tap3 = UITapGestureRecognizer(target: self, action: Selector("calendar"))
+        tap3.delegate = self
+        Calendar.addGestureRecognizer(tap3)
         
        
         passedUrlScheme = "fb://profile"
@@ -92,6 +109,69 @@ class ViewController: UIViewController
         demoParameterToss()
     }
     
+    func navigate() {
+        // handling code
+        switch MainController.navigationHost {
+        case "applemaps":
+            MainController.navigationHost = "googlemaps"
+            NavigationLabel.text = "Google Maps"
+        case "googlemaps":
+            MainController.navigationHost = "waze"
+            NavigationLabel.text = "Waze"
+        case "waze":
+            MainController.navigationHost = "applemaps"
+            NavigationLabel.text = "Apple Maps"
+        default:
+            MainController.navigationHost = "applemaps"
+            NavigationLabel.text = "Apple Maps"
+        }
+    }
+    
+    func mail() {
+        // handling code
+        switch MainController.mailHost {
+        case "applemail":
+            MainController.mailHost = "gmail"
+            MailLabel.text = "Gmail"
+        case "gmail":
+            MainController.mailHost = "applemail"
+            MailLabel.text = "Apple Mail"
+        default:
+            MainController.mailHost = "applemail"
+            MailLabel.text = "Apple Mail"
+        }
+    }
+    
+    func browser() {
+        // handling code
+        switch MainController.browserHost {
+        case "safari":
+            MainController.browserHost = "chrome"
+            BrowserLabel.text = "Google Chrome"
+        case "chrome":
+            MainController.browserHost = "safari"
+            BrowserLabel.text = "Safari"
+        default:
+            MainController.browserHost = "safari"
+            BrowserLabel.text = "Safari"
+        }
+    }
+    
+    func calendar() {
+        // handling code
+        switch MainController.calendarHost {
+        case "applecalendar":
+            MainController.calendarHost = "sunrise"
+            CalendarLabel.text = "Sunrise Calendar"
+        case "sunrise":
+            MainController.calendarHost = "applecalendar"
+            CalendarLabel.text = "Apple Calendar"
+        default:
+            MainController.calendarHost = "applecalendar"
+            CalendarLabel.text = "Apple Calendar"
+        }
+    }
+
     func getEquivalentApplications()
     {
         for retrievedDictionary in providerItemsArray!
@@ -101,6 +181,10 @@ class ViewController: UIViewController
                 equivalentApplicationsArray.append(retrievedDictionary)
             }
         }
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true;
     }
     
     func demoParameterToss()

@@ -13,7 +13,7 @@
 		683FB9F81B9B64660080EFAB /* Providers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 683FB9F71B9B64660080EFAB /* Providers.plist */; };
 		683FB9F91B9B64660080EFAB /* Providers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 683FB9F71B9B64660080EFAB /* Providers.plist */; };
 		684CD90A1B9AAFC7004C06A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684CD9091B9AAFC7004C06A5 /* AppDelegate.swift */; };
-		684CD90C1B9AAFC7004C06A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684CD90B1B9AAFC7004C06A5 /* ViewController.swift */; };
+		684CD90C1B9AAFC7004C06A5 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684CD90B1B9AAFC7004C06A5 /* MainController.swift */; };
 		684CD90F1B9AAFC7004C06A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684CD90D1B9AAFC7004C06A5 /* Main.storyboard */; };
 		684CD9111B9AAFC7004C06A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 684CD9101B9AAFC7004C06A5 /* Images.xcassets */; };
 		684CD9141B9AAFC7004C06A5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 684CD9121B9AAFC7004C06A5 /* LaunchScreen.xib */; };
@@ -53,7 +53,7 @@
 		684CD9041B9AAFC7004C06A5 /* DefaultsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DefaultsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		684CD9081B9AAFC7004C06A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		684CD9091B9AAFC7004C06A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		684CD90B1B9AAFC7004C06A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		684CD90B1B9AAFC7004C06A5 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		684CD90E1B9AAFC7004C06A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		684CD9101B9AAFC7004C06A5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		684CD9131B9AAFC7004C06A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 			children = (
 				684CD9091B9AAFC7004C06A5 /* AppDelegate.swift */,
 				43E5DF0F1B9BB2BB00EE168A /* DFGrid.swift */,
-				684CD90B1B9AAFC7004C06A5 /* ViewController.swift */,
+				684CD90B1B9AAFC7004C06A5 /* MainController.swift */,
 				683FB9F71B9B64660080EFAB /* Providers.plist */,
 				684CD90D1B9AAFC7004C06A5 /* Main.storyboard */,
 				684CD9101B9AAFC7004C06A5 /* Images.xcassets */,
@@ -196,6 +196,7 @@
 		684CD8FC1B9AAFC7004C06A5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Macster Software Inc.";
 				TargetAttributes = {
@@ -256,7 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				684CD90C1B9AAFC7004C06A5 /* ViewController.swift in Sources */,
+				684CD90C1B9AAFC7004C06A5 /* MainController.swift in Sources */,
 				684CD90A1B9AAFC7004C06A5 /* AppDelegate.swift in Sources */,
 				43E5DF101B9BB2BB00EE168A /* DFGrid.swift in Sources */,
 			);
