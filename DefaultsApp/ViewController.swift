@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PureLayout
 
 class ViewController: UIViewController
 {
@@ -31,6 +32,27 @@ class ViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+//        let grid : DFGrid = DFGrid()
+//        grid.setTranslatesAutoresizingMaskIntoConstraints(false)
+//        view.addSubview(grid)
+//        grid.autoPinEdgesToSuperviewMargins()
+//        grid.backgroundColor = UIColor.blueColor()
+//        
+//        var views : [UIView] = []
+//        for i in 1...10 {
+//            var view = UIView()
+//            view.backgroundColor = UIColor.redColor()
+//            views.append(view)
+//        }
+//        
+//        grid.configure(views)
+        
+        
+        
+        
+        
+        
         
         passedUrlScheme = "twitter://user?screen_name=MJMaker6"
         

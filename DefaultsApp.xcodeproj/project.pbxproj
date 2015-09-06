@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43E5DF101B9BB2BB00EE168A /* DFGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E5DF0F1B9BB2BB00EE168A /* DFGrid.swift */; };
+		43E5DF1B1B9BCDCE00EE168A /* PureLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 43E5DF111B9BCCF600EE168A /* PureLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		43E5DF1C1B9BCDCF00EE168A /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E5DF111B9BCCF600EE168A /* PureLayout.framework */; };
 		683FB9F81B9B64660080EFAB /* Providers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 683FB9F71B9B64660080EFAB /* Providers.plist */; };
 		683FB9F91B9B64660080EFAB /* Providers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 683FB9F71B9B64660080EFAB /* Providers.plist */; };
 		684CD90A1B9AAFC7004C06A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684CD9091B9AAFC7004C06A5 /* AppDelegate.swift */; };
@@ -29,7 +32,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		43E5DF1A1B9BCDC500EE168A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				43E5DF1B1B9BCDCE00EE168A /* PureLayout.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		43E5DF0F1B9BB2BB00EE168A /* DFGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFGrid.swift; sourceTree = "<group>"; };
+		43E5DF111B9BCCF600EE168A /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = "Defaults-App/Carthage/Build/iOS/PureLayout.framework"; sourceTree = "<group>"; };
 		683FB9F71B9B64660080EFAB /* Providers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Providers.plist; sourceTree = "<group>"; };
 		684CD9041B9AAFC7004C06A5 /* DefaultsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DefaultsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		684CD9081B9AAFC7004C06A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43E5DF1C1B9BCDCF00EE168A /* PureLayout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,10 +82,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43E5DF161B9BCD9200EE168A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43E5DF111B9BCCF600EE168A /* PureLayout.framework */,
+			);
+			name = Frameworks;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		684CD8FB1B9AAFC7004C06A5 = {
 			isa = PBXGroup;
 			children = (
 				684CD9061B9AAFC7004C06A5 /* DefaultsApp */,
+				43E5DF161B9BCD9200EE168A /* Frameworks */,
 				684CD91C1B9AAFC8004C06A5 /* DefaultsAppTests */,
 				684CD9051B9AAFC7004C06A5 /* Products */,
 			);
@@ -84,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				684CD9091B9AAFC7004C06A5 /* AppDelegate.swift */,
+				43E5DF0F1B9BB2BB00EE168A /* DFGrid.swift */,
 				684CD90B1B9AAFC7004C06A5 /* ViewController.swift */,
 				683FB9F71B9B64660080EFAB /* Providers.plist */,
 				684CD90D1B9AAFC7004C06A5 /* Main.storyboard */,
@@ -130,6 +161,7 @@
 				684CD9001B9AAFC7004C06A5 /* Sources */,
 				684CD9011B9AAFC7004C06A5 /* Frameworks */,
 				684CD9021B9AAFC7004C06A5 /* Resources */,
+				43E5DF1A1B9BCDC500EE168A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -226,6 +258,7 @@
 			files = (
 				684CD90C1B9AAFC7004C06A5 /* ViewController.swift in Sources */,
 				684CD90A1B9AAFC7004C06A5 /* AppDelegate.swift in Sources */,
+				43E5DF101B9BB2BB00EE168A /* DFGrid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +388,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Defaults-cqmtookcaavoovcksnuugmotoyyg/Build/Products/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = DefaultsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -369,6 +403,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Defaults-cqmtookcaavoovcksnuugmotoyyg/Build/Products/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = DefaultsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
