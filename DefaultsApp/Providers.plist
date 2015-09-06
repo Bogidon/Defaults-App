@@ -43,8 +43,6 @@
 			<string>twitter://</string>
 			<key>Uses Initial Parameters</key>
 			<true/>
-			<key>New item</key>
-			<string></string>
 			<key>Parameters</key>
 			<dict>
 				<key>user</key>
@@ -55,15 +53,15 @@
 					<array>
 						<dict>
 							<key>typeId</key>
-							<string>id</string>
-							<key>parameterType</key>
-							<string>identifierType</string>
-						</dict>
-						<dict>
-							<key>typeId</key>
 							<string>screen_name</string>
 							<key>parameterType</key>
 							<string>usernameType</string>
+						</dict>
+						<dict>
+							<key>typeId</key>
+							<string>id</string>
+							<key>parameterType</key>
+							<string>identifierType</string>
 						</dict>
 					</array>
 				</dict>
@@ -82,11 +80,20 @@
 					</array>
 				</dict>
 				<key>timeline</key>
-				<dict/>
+				<dict>
+					<key>topLevelParameterType</key>
+					<string>timelineType</string>
+				</dict>
 				<key>mentions</key>
-				<dict/>
+				<dict>
+					<key>topLevelParameterType</key>
+					<string>mentionType</string>
+				</dict>
 				<key>messages</key>
-				<dict/>
+				<dict>
+					<key>topLevelParameterType</key>
+					<string>messageType</string>
+				</dict>
 				<key>list</key>
 				<dict>
 					<key>topLevelParameterType</key>

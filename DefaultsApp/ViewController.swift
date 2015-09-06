@@ -27,18 +27,21 @@ class ViewController: UIViewController
     var alternativeApplicationName: String! = ""
     
     var reconstructedLink: String! = ""
-
+    
+    var subParameterArray: NSArray!
+    var otherSubParameterArray: NSArray!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        passedUrlScheme = "twitter://user?screen_name=MJMaker6"
+        passedUrlScheme = "fb://profile"
         
         var seperatedArray = passedUrlScheme.componentsSeparatedByString("://")
         
         var passedURLSchemeHeader = seperatedArray[0] + "://"
         
-        alternativeApplicationName = "GenericTwitter"
+        alternativeApplicationName = "GenericFacebook"
         
         ///
         
@@ -114,11 +117,16 @@ class ViewController: UIViewController
                             
                             for specificValue in equivalentApplicationDictionaryValuesArray
                             {
-                                    for deeperSpecificValue in Array(arrayLiteral: specificValue)
+                                for deeperSpecificValue in Array(arrayLiteral: specificValue)
+                                {
+                                    if deeperSpecificValue.count > 1
                                     {
-                                        var subParameterArray = deeperSpecificValue["Sub-Parameters"] as! NSArray
-                                        
-                                        if subParameterArray[0].valueForKey("parameterType") as! NSString == NSString(string: parameterType)
+                                        subParameterArray = deeperSpecificValue["Sub-Parameters"] as! NSArray
+                                    }
+                                    
+                                    for thing in subParameterArray
+                                    {
+                                        if thing.valueForKey("parameterType") as! NSString == NSString(string: parameterType)
                                         {
                                             var equivalentUrlScheme = retrievedDictionary["URL Scheme"] as! String
                                             var equivalentTypeId = String(subParameterArray[0].valueForKey("typeId") as! NSString)
@@ -129,7 +137,10 @@ class ViewController: UIViewController
                                             {
                                                 var arrayOfSpecificKeys = equivalentApplicationDictionary[specificKey as! NSString] as! NSDictionary
                                                 
-                                                var otherSubParameterArray = arrayOfSpecificKeys["Sub-Parameters"] as! NSArray
+                                                if arrayOfSpecificKeys.count > 1
+                                                {
+                                                    otherSubParameterArray = arrayOfSpecificKeys["Sub-Parameters"] as! NSArray
+                                                }
                                                 
                                                 for deeperSpecificKey in otherSubParameterArray
                                                 {
@@ -149,13 +160,15 @@ class ViewController: UIViewController
                                                         }
                                                     }
                                                 }
+                                            }
                                         }
                                     }
                                 }
                             }
                         }
+                        
+                        
                     }
-                    
                 }
             }
             else
