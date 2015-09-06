@@ -4,6 +4,23 @@
 <dict>
 	<key>Default Types</key>
 	<dict>
+		<key>Browser</key>
+		<array>
+			<string>urlType</string>
+		</array>
+		<key>Navigation</key>
+		<array>
+			<string>destinationType</string>
+			<string>startingType</string>
+		</array>
+		<key>Mail</key>
+		<array>
+			<string>toType</string>
+			<string>ccType</string>
+			<string>bccType</string>
+			<string>subjectType</string>
+			<string>bodyType</string>
+		</array>
 		<key>Twitter</key>
 		<array>
 			<string>usernameType</string>
@@ -34,6 +51,70 @@
 	</dict>
 	<key>Provider Items</key>
 	<array>
+		<dict>
+			<key>Name</key>
+			<string>Waze</string>
+			<key>Category</key>
+			<string>Navigation</string>
+			<key>URL Scheme</key>
+			<string>waze://</string>
+			<key>Uses Initial Parameters</key>
+			<false/>
+			<key>Parameters</key>
+			<dict>
+				<key>q</key>
+				<dict>
+					<key>topLevelParameterType</key>
+					<string>destinationType</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>GoogleMaps</string>
+			<key>Category</key>
+			<string>Navigation</string>
+			<key>URL Scheme</key>
+			<string>comgooglemaps://</string>
+			<key>Uses Initial Parameters</key>
+			<false/>
+			<key>Parameters</key>
+			<dict>
+				<key>saddr</key>
+				<dict>
+					<key>topLevelParameterType</key>
+					<string>startingType</string>
+				</dict>
+				<key>daddr</key>
+				<dict>
+					<key>topLevelParameterType</key>
+					<string>destinationType</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>AppleMaps</string>
+			<key>Category</key>
+			<string>Navigation</string>
+			<key>URL Scheme</key>
+			<string>http://maps.apple.com/</string>
+			<key>Uses Initial Parameters</key>
+			<false/>
+			<key>Parameters</key>
+			<dict>
+				<key>daddr</key>
+				<dict>
+					<key>topLevelParameterType</key>
+					<string>destinationType</string>
+				</dict>
+				<key>saddr</key>
+				<dict>
+					<key>topLevelParameterType</key>
+					<string>startingType</string>
+				</dict>
+			</dict>
+		</dict>
 		<dict>
 			<key>Name</key>
 			<string>Twitter</string>
