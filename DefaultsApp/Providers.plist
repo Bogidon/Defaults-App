@@ -43,11 +43,13 @@
 			<string>twitter://</string>
 			<key>Uses Initial Parameters</key>
 			<true/>
+			<key>New item</key>
+			<string></string>
 			<key>Parameters</key>
 			<dict>
 				<key>user</key>
 				<dict>
-					<key>parameterType</key>
+					<key>topLevelParameterType</key>
 					<string>userType</string>
 					<key>Sub-Parameters</key>
 					<array>
@@ -67,7 +69,7 @@
 				</dict>
 				<key>status</key>
 				<dict>
-					<key>parameterType</key>
+					<key>topLevelParameterType</key>
 					<string>statusType</string>
 					<key>Sub-Parameters</key>
 					<array>
@@ -87,7 +89,7 @@
 				<dict/>
 				<key>list</key>
 				<dict>
-					<key>parameterType</key>
+					<key>topLevelParameterType</key>
 					<string>listType</string>
 					<key>Sub-Parameters</key>
 					<array>
@@ -107,7 +109,7 @@
 				</dict>
 				<key>post</key>
 				<dict>
-					<key>parameterType</key>
+					<key>topLevelParameterType</key>
 					<string>postType</string>
 					<key>Sub-Parameters</key>
 					<array>
@@ -127,7 +129,7 @@
 				</dict>
 				<key>search</key>
 				<dict>
-					<key>parameterType</key>
+					<key>topLevelParameterType</key>
 					<string>searchType</string>
 					<key>Sub-Parameters</key>
 					<array>
@@ -149,12 +151,12 @@
 			<key>URL Scheme</key>
 			<string>generictwitter://</string>
 			<key>Uses Initial Parameters</key>
-			<false/>
+			<true/>
 			<key>Parameters</key>
 			<dict>
 				<key>user</key>
 				<dict>
-					<key>parameterType</key>
+					<key>topLevelParameterType</key>
 					<string>userType</string>
 					<key>Sub-Parameters</key>
 					<array>
@@ -174,7 +176,7 @@
 				</dict>
 				<key>status</key>
 				<dict>
-					<key>parameterType</key>
+					<key>topLevelParameterType</key>
 					<string>statusType</string>
 					<key>Sub-Parameters</key>
 					<array>
@@ -201,37 +203,37 @@
 			<dict>
 				<key>profile</key>
 				<dict>
-					<key>parameterType</key>
+					<key>topLevelParameterType</key>
 					<string>profileType</string>
 				</dict>
 				<key>friends</key>
 				<dict>
-					<key>parameterType</key>
+					<key>topLevelParameterType</key>
 					<string>friendType</string>
 				</dict>
 				<key>notifications</key>
 				<dict>
-					<key>parameterType</key>
+					<key>topLevelParameterType</key>
 					<string>notificationType</string>
 				</dict>
 				<key>feed</key>
 				<dict>
-					<key>parameterType</key>
+					<key>topLevelParameterType</key>
 					<string>feedType</string>
 				</dict>
 				<key>events</key>
 				<dict>
-					<key>parameterType</key>
+					<key>topLevelParameterType</key>
 					<string>eventType</string>
 				</dict>
 				<key>notes</key>
 				<dict>
-					<key>parameterType</key>
+					<key>topLevelParameterType</key>
 					<string>noteType</string>
 				</dict>
 				<key>albums</key>
 				<dict>
-					<key>parameterType</key>
+					<key>topLevelParameterType</key>
 					<string>albumType</string>
 				</dict>
 			</dict>
@@ -249,37 +251,37 @@
 			<dict>
 				<key>user</key>
 				<dict>
-					<key>parameterType</key>
+					<key>topLevelParameterType</key>
 					<string>profileType</string>
 				</dict>
 				<key>friends</key>
 				<dict>
-					<key>parameterType</key>
+					<key>topLevelParameterType</key>
 					<string>friendType</string>
 				</dict>
 				<key>notifications</key>
 				<dict>
-					<key>parameterType</key>
+					<key>topLevelParameterType</key>
 					<string>notificationType</string>
 				</dict>
 				<key>feed</key>
 				<dict>
-					<key>parameterType</key>
+					<key>topLevelParameterType</key>
 					<string>feedType</string>
 				</dict>
 				<key>events</key>
 				<dict>
-					<key>parameterType</key>
+					<key>topLevelParameterType</key>
 					<string>eventType</string>
 				</dict>
 				<key>notes</key>
 				<dict>
-					<key>parameterType</key>
+					<key>topLevelParameterType</key>
 					<string>noteType</string>
 				</dict>
 				<key>albums</key>
 				<dict>
-					<key>parameterType</key>
+					<key>topLevelParameterType</key>
 					<string>albumType</string>
 				</dict>
 			</dict>

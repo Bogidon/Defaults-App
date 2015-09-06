@@ -32,13 +32,13 @@ class ViewController: UIViewController
     {
         super.viewDidLoad()
         
-        passedUrlScheme = "fb://profile"
+        passedUrlScheme = "twitter://user?screen_name=MJMaker6"
         
         var seperatedArray = passedUrlScheme.componentsSeparatedByString("://")
         
         var passedURLSchemeHeader = seperatedArray[0] + "://"
         
-        alternativeApplicationName = "GenericFacebook"
+        alternativeApplicationName = "GenericTwitter"
         
         ///
         
@@ -114,22 +114,24 @@ class ViewController: UIViewController
                             
                             for specificValue in equivalentApplicationDictionaryValuesArray
                             {
-                                if specificValue.isKindOfClass(NSArray)
-                                {
-                                    for deeperSpecificValue in specificValue as! NSArray
+                                    for deeperSpecificValue in Array(arrayLiteral: specificValue)
                                     {
-                                        if deeperSpecificValue["parameterType"] as! NSString == NSString(string: parameterType)
+                                        var subParameterArray = deeperSpecificValue["Sub-Parameters"] as! NSArray
+                                        
+                                        if subParameterArray[0].valueForKey("parameterType") as! NSString == NSString(string: parameterType)
                                         {
                                             var equivalentUrlScheme = retrievedDictionary["URL Scheme"] as! String
-                                            var equivalentTypeId = String(deeperSpecificValue["typeId"] as! NSString)
+                                            var equivalentTypeId = String(subParameterArray[0].valueForKey("typeId") as! NSString)
                                             
                                             var equivalentApplicationDictionaryKeysArray = Array(equivalentApplicationDictionary.allKeys)
                                             
                                             for specificKey in equivalentApplicationDictionaryKeysArray
                                             {
-                                                var arrayOfSpecificKeys = equivalentApplicationDictionary[specificKey as! NSString] as! NSArray
+                                                var arrayOfSpecificKeys = equivalentApplicationDictionary[specificKey as! NSString] as! NSDictionary
                                                 
-                                                for deeperSpecificKey in arrayOfSpecificKeys
+                                                var otherSubParameterArray = arrayOfSpecificKeys["Sub-Parameters"] as! NSArray
+                                                
+                                                for deeperSpecificKey in otherSubParameterArray
                                                 {
                                                     var typeIdOfDeeperSpecificKey = deeperSpecificKey.valueForKey("typeId") as! String
                                                     
@@ -147,7 +149,6 @@ class ViewController: UIViewController
                                                         }
                                                     }
                                                 }
-                                            }
                                         }
                                     }
                                 }
@@ -167,14 +168,14 @@ class ViewController: UIViewController
                     
                     var parametersOfCurrentApplication = currentApplicationDictionary["Parameters"] as! NSDictionary
                     
-                    var subParameterOfVariable = parametersOfCurrentApplication[firstURLSchemeSuffixVariable]!.valueForKey("parameterType") as! NSString
+                    var subParameterOfVariable = parametersOfCurrentApplication[firstURLSchemeSuffixVariable]!.valueForKey("topLevelParameterType") as! NSString
                     
                     var equivalentUrlScheme = retrievedDictionary["URL Scheme"] as! String
                     var parametersArray = Array(retrievedDictionary.valueForKey("Parameters") as! NSDictionary)
                     
                     for retrievedItem in parametersArray
                     {
-                        if retrievedItem.1.valueForKey("parameterType") as! NSString == subParameterOfVariable
+                        if retrievedItem.1.valueForKey("topLevelParameterType") as! NSString == subParameterOfVariable
                         {
                             reconstructedLink = "\(equivalentUrlScheme)\(retrievedItem.0 as! NSString)"
                         }
