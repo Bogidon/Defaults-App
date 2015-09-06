@@ -7,15 +7,29 @@
 		<key>Twitter</key>
 		<array>
 			<string>usernameType</string>
+			<string>searchType</string>
+			<string>postType</string>
+			<string>listType</string>
+			<string>userType</string>
+			<string>mentionType</string>
+			<string>messageType</string>
+			<string>timelineType</string>
 			<string>identifierType</string>
 			<string>unknownType</string>
 			<string>messageType</string>
 			<string>replyType</string>
 			<string>queryType</string>
+			<string>statusType</string>
 		</array>
 		<key>Facebook</key>
 		<array>
-			<string>usernameType</string>
+			<string>profileType</string>
+			<string>friendType</string>
+			<string>notificationType</string>
+			<string>feedType</string>
+			<string>eventType</string>
+			<string>noteType</string>
+			<string>albumType</string>
 		</array>
 	</dict>
 	<key>Provider Items</key>
@@ -32,74 +46,99 @@
 			<key>Parameters</key>
 			<dict>
 				<key>user</key>
-				<array>
-					<dict>
-						<key>typeId</key>
-						<string>screen_name</string>
-						<key>parameterType</key>
-						<string>usernameType</string>
-					</dict>
-					<dict>
-						<key>typeId</key>
-						<string>id</string>
-						<key>parameterType</key>
-						<string>identifierType</string>
-					</dict>
-				</array>
+				<dict>
+					<key>parameterType</key>
+					<string>userType</string>
+					<key>Sub-Parameters</key>
+					<array>
+						<dict>
+							<key>typeId</key>
+							<string>id</string>
+							<key>parameterType</key>
+							<string>identifierType</string>
+						</dict>
+						<dict>
+							<key>typeId</key>
+							<string>screen_name</string>
+							<key>parameterType</key>
+							<string>usernameType</string>
+						</dict>
+					</array>
+				</dict>
 				<key>status</key>
-				<array>
-					<dict>
-						<key>typeId</key>
-						<string>id</string>
-						<key>parameterType</key>
-						<string>identifierType</string>
-					</dict>
-				</array>
+				<dict>
+					<key>parameterType</key>
+					<string>statusType</string>
+					<key>Sub-Parameters</key>
+					<array>
+						<dict>
+							<key>typeId</key>
+							<string>id</string>
+							<key>parameterType</key>
+							<string>identifierType</string>
+						</dict>
+					</array>
+				</dict>
 				<key>timeline</key>
-				<array/>
+				<dict/>
 				<key>mentions</key>
-				<array/>
+				<dict/>
 				<key>messages</key>
-				<array/>
+				<dict/>
 				<key>list</key>
-				<array>
-					<dict>
-						<key>typeId</key>
-						<string>screen_name</string>
-						<key>parameterType</key>
-						<string>usernameType</string>
-					</dict>
-					<dict>
-						<key>typeId</key>
-						<string>slug</string>
-						<key>parameterType</key>
-						<string>unknownType</string>
-					</dict>
-				</array>
+				<dict>
+					<key>parameterType</key>
+					<string>listType</string>
+					<key>Sub-Parameters</key>
+					<array>
+						<dict>
+							<key>typeId</key>
+							<string>slug</string>
+							<key>parameterType</key>
+							<string>unknownType</string>
+						</dict>
+						<dict>
+							<key>typeId</key>
+							<string>screen_name</string>
+							<key>parameterType</key>
+							<string>usernameType</string>
+						</dict>
+					</array>
+				</dict>
 				<key>post</key>
-				<array>
-					<dict>
-						<key>typeId</key>
-						<string>message</string>
-						<key>parameterType</key>
-						<string>messageType</string>
-					</dict>
-					<dict>
-						<key>typeId</key>
-						<string>in_reply_to_status_id</string>
-						<key>parameterType</key>
-						<string>replyType</string>
-					</dict>
-				</array>
+				<dict>
+					<key>parameterType</key>
+					<string>postType</string>
+					<key>Sub-Parameters</key>
+					<array>
+						<dict>
+							<key>typeId</key>
+							<string>in_reply_to_status_id</string>
+							<key>parameterType</key>
+							<string>replyType</string>
+						</dict>
+						<dict>
+							<key>typeId</key>
+							<string>message</string>
+							<key>parameterType</key>
+							<string>messageType</string>
+						</dict>
+					</array>
+				</dict>
 				<key>search</key>
-				<array>
-					<dict>
-						<key>typeId</key>
-						<string>query</string>
-						<key>parameterType</key>
-						<string>queryType</string>
-					</dict>
-				</array>
+				<dict>
+					<key>parameterType</key>
+					<string>searchType</string>
+					<key>Sub-Parameters</key>
+					<array>
+						<dict>
+							<key>typeId</key>
+							<string>query</string>
+							<key>parameterType</key>
+							<string>queryType</string>
+						</dict>
+					</array>
+				</dict>
 			</dict>
 		</dict>
 		<dict>
@@ -114,29 +153,39 @@
 			<key>Parameters</key>
 			<dict>
 				<key>user</key>
-				<array>
-					<dict>
-						<key>typeId</key>
-						<string>name_user</string>
-						<key>parameterType</key>
-						<string>usernameType</string>
-					</dict>
-					<dict>
-						<key>typeId</key>
-						<string>identity</string>
-						<key>parameterType</key>
-						<string>identifierType</string>
-					</dict>
-				</array>
+				<dict>
+					<key>parameterType</key>
+					<string>userType</string>
+					<key>Sub-Parameters</key>
+					<array>
+						<dict>
+							<key>typeId</key>
+							<string>name_user</string>
+							<key>parameterType</key>
+							<string>usernameType</string>
+						</dict>
+						<dict>
+							<key>typeId</key>
+							<string>identity</string>
+							<key>parameterType</key>
+							<string>identifierType</string>
+						</dict>
+					</array>
+				</dict>
 				<key>status</key>
-				<array>
-					<dict>
-						<key>typeId</key>
-						<string>id</string>
-						<key>parameterType</key>
-						<string>identifierType</string>
-					</dict>
-				</array>
+				<dict>
+					<key>parameterType</key>
+					<string>statusType</string>
+					<key>Sub-Parameters</key>
+					<array>
+						<dict>
+							<key>typeId</key>
+							<string>id</string>
+							<key>parameterType</key>
+							<string>identifierType</string>
+						</dict>
+					</array>
+				</dict>
 			</dict>
 		</dict>
 		<dict>
@@ -150,17 +199,89 @@
 			<false/>
 			<key>Parameters</key>
 			<dict>
+				<key>profile</key>
+				<dict>
+					<key>parameterType</key>
+					<string>profileType</string>
+				</dict>
+				<key>friends</key>
+				<dict>
+					<key>parameterType</key>
+					<string>friendType</string>
+				</dict>
+				<key>notifications</key>
+				<dict>
+					<key>parameterType</key>
+					<string>notificationType</string>
+				</dict>
+				<key>feed</key>
+				<dict>
+					<key>parameterType</key>
+					<string>feedType</string>
+				</dict>
+				<key>events</key>
+				<dict>
+					<key>parameterType</key>
+					<string>eventType</string>
+				</dict>
+				<key>notes</key>
+				<dict>
+					<key>parameterType</key>
+					<string>noteType</string>
+				</dict>
+				<key>albums</key>
+				<dict>
+					<key>parameterType</key>
+					<string>albumType</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>GenericFacebook</string>
+			<key>Category</key>
+			<string>Facebook</string>
+			<key>URL Scheme</key>
+			<string>facebook://</string>
+			<key>Uses Initial Parameters</key>
+			<false/>
+			<key>Parameters</key>
+			<dict>
 				<key>user</key>
-				<array/>
-				<key>status</key>
-				<array>
-					<dict>
-						<key>typeId</key>
-						<string>id</string>
-						<key>parameterType</key>
-						<string>identifierType</string>
-					</dict>
-				</array>
+				<dict>
+					<key>parameterType</key>
+					<string>profileType</string>
+				</dict>
+				<key>friends</key>
+				<dict>
+					<key>parameterType</key>
+					<string>friendType</string>
+				</dict>
+				<key>notifications</key>
+				<dict>
+					<key>parameterType</key>
+					<string>notificationType</string>
+				</dict>
+				<key>feed</key>
+				<dict>
+					<key>parameterType</key>
+					<string>feedType</string>
+				</dict>
+				<key>events</key>
+				<dict>
+					<key>parameterType</key>
+					<string>eventType</string>
+				</dict>
+				<key>notes</key>
+				<dict>
+					<key>parameterType</key>
+					<string>noteType</string>
+				</dict>
+				<key>albums</key>
+				<dict>
+					<key>parameterType</key>
+					<string>albumType</string>
+				</dict>
 			</dict>
 		</dict>
 	</array>
